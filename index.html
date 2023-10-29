@@ -3,11 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Soda Expiration Date Decoder</title>
 </head>
 <body>
-    
+    <div class="container"> 
+        <h1>Soda Expiration Date Decoder</h1>
+            <p>Enter the first letter on the soda can: </p>
+                <input type="text" placeholder="Ex: D8119 -> D" id="codeLetter">
+            <p>Number after the letter is the last number of the year</p>
+            <p id="result2"></p>
+                <script>
+                    const currentYear = new Date().getFullYear();
 
+// Determine the current cycle (e.g., if currentYear is 2023, the cycle would be 2020-2029)
+const currentCycle = Math.floor(currentYear / 10) * 10;
+
+// Calculate the start year based on the current cycle
+const startYear = currentCycle;
+
+let result = "";
+
+if (startYear >= 2020 && startYear <= 9999) {
+    for (let number = 0; number <= 9; number++) {
+        const year = startYear + number;
+        result += `Number ${number} corresponds to year ${year}\n`;
+    }
+} else {
+    result = "Invalid input. Please enter a number between 0 and 9.";
+}
+
+// Display the results in the "result2" element
+document.getElementById("result2").innerText = result;
+                </script>
+            <p>Enter the three numbers after the year: </p>
+                <input type="number" placeholder="Ex: D8119 -> 119" id="codeDate">
+                <br>
+        <button id="decode" onclick="decode()">Decode</button>
+            <ul>
+                <li id="result1"></li>
+            </ul>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
