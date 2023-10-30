@@ -1,11 +1,11 @@
 function autoUpdateYear() {
     const currentYear = new Date().getFullYear();
-    const element = document.getElementById("year"); // Replace "yourElementId" with your element's ID
+    const element = document.getElementById("year");
 
-// Apply CSS to the element
-element.style.color = "red"; // Example: Change text color to red
-element.style.fontSize = "20px"; // Example: Set font size to 20px
-element.textContent = currentYear;
+    //apply CSS to the element
+    element.style.color = "red"; //change text color to red
+    element.style.fontSize = "20px"; //set font size to 20px
+    element.textContent = currentYear;
 
     const currentCycle = Math.floor(currentYear / 10) * 10;
     const startYear = currentCycle;
