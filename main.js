@@ -39,11 +39,12 @@ function decode() {
         document.getElementById("result1").textContent = `Invalid`;
     }
     //get Julian date code   
-    if (dateCode.length >= 1 && dateCode.length <= 3) {
-        const dayOfYear = parseInt(dateCode);
+    if (dateCode.length >= 5 && dateCode.length <= 7) {
+        const year = parseInt(dateCode.substr(0, 4))
+        const dayOfYear = parseInt(dateCode.substr(4));
     
-        if (!isNaN(dayOfYear) && dayOfYear >= 1 && dayOfYear <= 366)  {
-            const fullDate = getJulianDate(new Date().getFullYear(), dayOfYear); 
+        if (!isNaN(year) && !isNaN(dayOfYear) && dayOfYear >= 1 && dayOfYear <= 366)  {
+            const fullDate = getJulianDate(year, dayOfYear); 
             document.getElementById("result2").textContent = `${fullDate}`;
         } else {
             document.getElementById("result2").textContent = "Invalid year or day of year.";

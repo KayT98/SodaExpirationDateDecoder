@@ -1,4 +1,3 @@
-function autoUpdateYear() {
     const currentYear = new Date().getFullYear();
     const element = document.getElementById("year");
 
@@ -7,6 +6,7 @@ function autoUpdateYear() {
     element.style.fontSize = "20px"; //set font size to 20px
     element.textContent = currentYear;
 
+function autoUpdateYear() {
     const currentCycle = Math.floor(currentYear / 10) * 10;
     const startYear = currentCycle;
     const result = document.getElementById("list");
