@@ -4,46 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Soda Expiration Date Decoder</title>
+    <title>Soda Manufacture Date Decoder</title>
 </head>
 <body>
+    <script>
+        const copyRightYear = () => {
+            let year = new Date().getFullYear()
+            document.getElementById("copyRightYear").innerText = year;
+        }
+            document.addEventListener("DOMContentLoaded", copyRightYear);
+    </script>
+
+
     <div class="container"> 
-        <h1>Soda Expiration Date Decoder</h1>
+        <h1>Soda Manufacture Date Decoder</h1>
             <p>Enter the first letter on the soda can: </p>
-                <input type="text" placeholder="Ex: D8119 -> D" id="codeLetter">
-            <p>Number after the letter is the last number of the year</p>
-            <p id="result2"></p>
-                <script>
-                    const currentYear = new Date().getFullYear();
-
-// Determine the current cycle (e.g., if currentYear is 2023, the cycle would be 2020-2029)
-const currentCycle = Math.floor(currentYear / 10) * 10;
-
-// Calculate the start year based on the current cycle
-const startYear = currentCycle;
-
-let result = "";
-
-if (startYear >= 2020 && startYear <= 9999) {
-    for (let number = 0; number <= 9; number++) {
-        const year = startYear + number;
-        result += `Number ${number} corresponds to year ${year}\n`;
-    }
-} else {
-    result = "Invalid input. Please enter a number between 0 and 9.";
-}
-
-// Display the results in the "result2" element
-document.getElementById("result2").innerText = result;
-                </script>
+                <input type="text" placeholder="Ex: D8119 -> D" id="codeLetter" maxlength="1">
+                <p id="result1"></p>
+            <p>Number after the letter is the last number of the year the item(s) was made in</p>
+                <p id="list"></p>
+                <script src="yearCode.js"></script>
             <p>Enter the three numbers after the year: </p>
-                <input type="number" placeholder="Ex: D8119 -> 119" id="codeDate">
+                <input type="number" placeholder="Ex: D8119 -> 119th" id="codeDate">
+                <p id="result2"></p>
                 <br>
         <button id="decode" onclick="decode()">Decode</button>
+    </div>
+
+    <div class="explaination">
+        <h2>Please read before using</h2>
             <ul>
-                <li id="result1"></li>
+                <li><span>**This will not be 100% accurate, please be extra careful when checking for Manufacture Date**</span></li>
+                <li>Manufacture Date also called Sell-By-Date.</li>
+                <li>If you're in 2023 and the can has number 0 means it was made in 2020, not the year it will expired (2030)</li>
+                <li>If you see 15:54 this means time (3:54pm).</li>
+                <li>Each soda product will have different shelf life (opened, stored in dry/cool area, refrigerated)</li>
+                <li>Shelf life  can be 3, 6, 9, 12 months (unopened)</li>
+                <li>Year list will update every 5 years, if it doesn't. Contact me.</li>
+                <li>This is my personal project to help me as a Hazmat Waste and Donation Processor at TUL5.</li>
             </ul>
     </div>
+    <footer>
+        <p>Copyright&copy; by Kay Truong <span id="copyRightYear"></span>. All rights reserved.</p>
+    </footer>
     <script src="main.js"></script>
 </body>
 </html>

@@ -1,18 +1,5 @@
 function decode() {
     const monthMap = {
-        "A": "January",
-        "B": "February",
-        "C": "March",
-        "D": "April",
-        "E": "May",
-        "F": "June",
-        "G": "July",
-        "H": "August",
-        "I": "September",
-        "J": "October",
-        "K": "November",
-        "L": "December",
-
         "a": "January",
         "b": "February",
         "c": "March",
@@ -27,15 +14,18 @@ function decode() {
         "l": "December",
     };
 
-    const monthCode = document.getElementById("codeLetter").value;
+    const monthCode = document.getElementById("codeLetter").value.toLowerCase();
     const dateCode = document.getElementById("codeDate").value;
 
-    // Get month code
+    //get month code
     if (monthCode && monthMap[monthCode]) {
         document.getElementById("result1").innerText = `The month code is ${monthMap[monthCode]}`;
     } else {
         document.getElementById("result1").innerText = `Invalid`;
     }
 
+
+    //get Julian date code
+    
 }
 
