@@ -1,19 +1,25 @@
 function autoUpdateYear() {
     const currentYear = new Date().getFullYear();
+    const element = document.getElementById("year"); // Replace "yourElementId" with your element's ID
+
+// Apply CSS to the element
+element.style.color = "red"; // Example: Change text color to red
+element.style.fontSize = "20px"; // Example: Set font size to 20px
+element.textContent = currentYear;
+
     const currentCycle = Math.floor(currentYear / 10) * 10;
     const startYear = currentCycle;
-    let result = ""
+    const result = document.getElementById("list");
 
     if (startYear >= 2020 && startYear <= 9999) {
         for (let number = 0; number <= 9; number++) {
             const year = startYear + number;
-            result += `${number} corresponds to year ${year}\n`;
+            result.innerHTML += `${number} corresponds to year ${year}<br>`;
         }
     }
-    document.getElementById("list").innerText = result
 }
 autoUpdateYear();
 
-//update the list every 5 years
-setInterval(autoUpdateYear, 5 * 365 * 24 * 60 * 60 * 1000);
+//update the list every 10 years
+setInterval(autoUpdateYear, 10 * 365 * 24 * 60 * 60 * 1000);
 

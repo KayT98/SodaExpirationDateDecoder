@@ -1,31 +1,55 @@
+document.addEventListener("keydown", function(event) {
+    //check if the pressed key is the Enter key
+    if (event.key === "Enter") {
+        //call the decode function when Enter key is pressed
+        decode();
+    }
+});
+
+const monthMap = {
+    "a": "January",
+    "b": "February",
+    "c": "March",
+    "d": "April",
+    "e": "May",
+    "f": "June",
+    "g": "July",
+    "h": "August",
+    "i": "September",
+    "j": "October",
+    "k": "November",
+    "l": "December",
+};
+function getJulianDate(year, dayOfYear){
+    const date = new Date(year, 0);
+    date.setDate(dayOfYear);
+    const format = {weekday: "long", year: 'numeric', month: 'long', day: 'numeric'};
+    return date.toLocaleDateString(undefined, format);
+}
 function decode() {
-    const monthMap = {
-        "a": "January",
-        "b": "February",
-        "c": "March",
-        "d": "April",
-        "e": "May",
-        "f": "June",
-        "g": "July",
-        "h": "August",
-        "i": "September",
-        "j": "October",
-        "k": "November",
-        "l": "December",
-    };
 
     const monthCode = document.getElementById("codeLetter").value.toLowerCase();
     const dateCode = document.getElementById("codeDate").value;
 
     //get month code
     if (monthCode && monthMap[monthCode]) {
-        document.getElementById("result1").innerText = `The month code is ${monthMap[monthCode]}`;
-    } else {
-        document.getElementById("result1").innerText = `Invalid`;
+        document.getElementById("result1").textContent = `The month code is ${monthMap[monthCode]}`;
+    } 
+    else {
+        document.getElementById("result1").textContent = `Invalid`;
     }
-
-
-    //get Julian date code
+    //get Julian date code   
+    if (dateCode.length >= 1 && dateCode.length <= 3) {
+        const dayOfYear = parseInt(dateCode);
+    
+        if (!isNaN(dayOfYear) && dayOfYear >= 1 && dayOfYear <= 366)  {
+            const fullDate = getJulianDate(new Date().getFullYear(), dayOfYear); 
+            document.getElementById("result2").textContent = `${fullDate}`;
+        } else {
+            document.getElementById("result2").textContent = "Invalid year or day of year.";
+        }
+    } else {
+        document.getElementById("result2").textContent = "Invalid date format.";
+    }
     
 }
-

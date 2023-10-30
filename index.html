@@ -15,6 +15,10 @@
             document.addEventListener("DOMContentLoaded", copyRightYear);
     </script>
 
+    <div class="navBar">
+        <a href="https://www.linkedin.com/in/kay-truong-158824185/"><img src="./images/linkedin.png" alt="linkedin"></a>
+        <a href="https://github.com/KayT98"><img src="./images/github.png" alt="github"></a>
+    </div>
 
     <div class="container"> 
         <h1>Soda Manufacture Date Decoder</h1>
@@ -22,30 +26,49 @@
                 <input type="text" placeholder="Ex: D8119 -> D" id="codeLetter" maxlength="1">
                 <p id="result1"></p>
             <p>Number after the letter is the last number of the year the item(s) was made in</p>
-                <p id="list"></p>
+                <p id="list"></p> This year is<span id="year"></span>
                 <script src="yearCode.js"></script>
-            <p>Enter the three numbers after the year: </p>
-                <input type="number" placeholder="Ex: D8119 -> 119th" id="codeDate">
+            <p>Enter the number after the year: </p>
+                <input 
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                type = "number"
+                maxlength = "3"
+                placeholder="Ex: D8119 -> 119" 
+                id="codeDate">
                 <p id="result2"></p>
                 <br>
-        <button id="decode" onclick="decode()">Decode</button>
+        <button type="button" onclick="decode()">Decode</button>
     </div>
 
+    <div class="shelfLife">
+        <h2>Shelf Life List</h2>
+            <ul>
+                <li><a href="https://ask.usda.gov/s/article/Is-buying-soda-with-an-expired-date-on-it-dangerous">Read - USDA KNOWLEDGE ARTICLE</a></li>
+                <li>Date format - Example:
+                    <ol>MM DDD Y</ol>
+                    <ol>MMM DD YY</ol>
+                </li>
+                <li>Each soda product will has different shelf life (opened, stored in dry/cool area, refrigerated)</li>
+                <li>Sodas can last 3 to 9 months or longer (unopened)</li>
+                <li>For best quality, consume unopened <span>diet sodas within 3 months after the date expires; regular sodas within 9 months</span></li>
+                <li>Monster drinks have shelf life of 2yrs.</li>
+                <li>To get expiration date: Add the estimated shelf life with the Manufacture Date -- 2yrs + 2023 = 2025 || Oct + 3mo = Jan</li>
+            </ul>
+    </div>
     <div class="explaination">
         <h2>Please read before using</h2>
             <ul>
-                <li><span>**This will not be 100% accurate, please be extra careful when checking for Manufacture Date**</span></li>
+                <li><span>**This will not be 100% accurate for some brands, please do reseach & be extra careful when checking for Manufacture Date**</span></li>
                 <li>Manufacture Date also called Sell-By-Date.</li>
                 <li>If you're in 2023 and the can has number 0 means it was made in 2020, not the year it will expired (2030)</li>
-                <li>If you see 15:54 this means time (3:54pm).</li>
-                <li>Each soda product will have different shelf life (opened, stored in dry/cool area, refrigerated)</li>
-                <li>Shelf life  can be 3, 6, 9, 12 months (unopened)</li>
-                <li>Year list will update every 5 years, if it doesn't. Contact me.</li>
+                <li>If you see 15:54 this means Time (3:54pm).</li>
+                <li>Year list will update every 10 years, if it doesn't. <a href="mailto:kaytruong998@yahoo.com">Contact me</a></li>
                 <li>This is my personal project to help me as a Hazmat Waste and Donation Processor at TUL5.</li>
+                <li>Big thanks to this <a href="https://thenextfiftyyears.blogspot.com/2018/05/how-to-find-expiration-date-of-dr.html">guide</a>, that gave me ideas to make this website.</li>
             </ul>
     </div>
     <footer>
-        <p>Copyright&copy; by Kay Truong <span id="copyRightYear"></span>. All rights reserved.</p>
+        <p id="copy">Copyright&copy; by Kay Truong <span id="copyRightYear"></span>. All rights reserved.</p>
     </footer>
     <script src="main.js"></script>
 </body>

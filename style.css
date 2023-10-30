@@ -19,12 +19,32 @@ input::-webkit-outer-spin-button,
 input[type=number] {
     -moz-appearance: textfield;
 }
+@counter-style finger {
+    system: cyclic;
+    symbols: ☛;
+    suffix: " ";
+  }
+  
+ul {
+    list-style: finger;
+} 
 li:first-child {
     list-style-type: none;
 }
 span {
     color: red;
     font-weight: 900;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 50px;
+    height: 50px
+}
+button {
+    width: 200px;
+    height: 40px
 }
 .container {
     border: 2px solid black;
@@ -33,9 +53,9 @@ span {
     align-items: center;
     flex-direction: column;
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
-    background-color: white;
+    background-color: #C1CDCD;
 }
 .explaination {
     border: 2px solid black;
@@ -44,7 +64,26 @@ span {
     align-items: center;
     flex-direction: column;
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
-    background-color: white;
+    background-color: #C1CDCD;
+}
+.shelfLife {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    background-color: #C1CDCD;
+}
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#copy {
+    font-size: 1.5em
 }
