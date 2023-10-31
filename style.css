@@ -28,8 +28,18 @@ input[type=number] {
 ul {
     list-style: finger;
 } 
+li {
+    margin: 10px 0;
+}
 li:first-child {
     list-style-type: none;
+}
+ol {
+    margin: 10px 0;
+    list-style-type: disc;
+}
+ol li:first-child {
+    list-style-type: disc;
 }
 span {
     color: red;
@@ -52,12 +62,12 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: auto;
+    margin: 30px auto;
     width: 70%;
     padding: 10px;
     background-color: #C1CDCD;
 }
-.explaination {
+.explanation {
     border: 2px solid black;
     display: flex;
     justify-content: center;
@@ -74,7 +84,7 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: auto;
+    margin: 30px auto;
     width: 70%;
     padding: 10px;
     background-color: #C1CDCD;

@@ -15,10 +15,10 @@ const monthMap = {
     "f": "June",
     "g": "July",
     "h": "August",
-    "i": "September",
-    "j": "October",
-    "k": "November",
-    "l": "December",
+    "j": "September",
+    "k": "October",
+    "l": "November",
+    "m": "December",
 };
 function getJulianDate(year, dayOfYear){
     const date = new Date(year, 0);
