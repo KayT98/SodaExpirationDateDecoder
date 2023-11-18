@@ -2,4 +2,4 @@ A project to help me decode the manufacturering dates on some products as Hazmat
 
 For Dr. Pepper, the month code for Dec is M -- For Monster, it'll be L.
 
-![] (images/screenshot.png)
+![How the website works](<Screenshot 2023-11-18 113431.png>)
