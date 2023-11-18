@@ -9,13 +9,13 @@ footer {
 hr {
     width: 80%
 }
-/* Chrome, Safari, Edge, Opera 
+/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }                           /* remove up and down arrows for number field */
-/* Firefox 
+/* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
 }
@@ -23,7 +23,7 @@ input[type=number] {
     system: cyclic;
     symbols: ☛;
     suffix: " ";
-}*/
+}
 .navBar a:nth-child(3) {
     color: white;
     font-size: 2em;
