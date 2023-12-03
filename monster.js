@@ -24,7 +24,6 @@ const monthMap = {
 function decode() {
 
     const monthCode = document.getElementById("codeLetter").value.toLowerCase();
-    const dateCode = document.getElementById("codeDate").value;
 
     //get month code
     if (monthCode && monthMap[monthCode]) {
