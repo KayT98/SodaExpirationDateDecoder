@@ -15,28 +15,17 @@
             document.addEventListener("DOMContentLoaded", copyRightYear);
     </script>
 
-    <div class="navBar">    
-        <a href="monster.html">For Monster Products</a>
+    <div class="navBar">
+        <a href="index.html">For Dr. Pepper/7Up Products</a>
     </div>
 
     <div class="container"> 
         <h1>Soda Manufacture Date Decoder</h1>
-        <h2>For Dr.Pepper/Snapple Products</h2>
+        <h2>For Monster Products</h1>
             <p>Enter the first letter on the soda can: </p>
                 <input type="text" placeholder="Ex: D8119 -> D" id="codeLetter" maxlength="1">
                 <p id="result1"></p>
-            <p>Number after the letter is the last number of the year the item(s) was made in</p>
-                <p id="list"></p> This year is<span id="year"></span>
-                <script src="yearCode.js"></script>
-            <p>Enter the number after the year: </p>
-                <input 
-                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                type = "number"
-                maxlength = "7"
-                placeholder="Ex: D8119 -> 2018119" 
-                id="codeDate">
-                <p id="result2"></p>
-                <br>
+            <p>Year and Date: D2319 -> Year: 2023 - Date: 19</p>
         <button type="button" onclick="decode()">Decode</button>
     </div>
 
@@ -48,7 +37,7 @@
                 <li>Manufacture Date (MD) also called Sell-By-Date (SBD)</li>
                 <li>Some codes can also serve as the Expiration Date.</li>
                 <li>Many manufacturers use different SBD formats.</li>
-                <li>Date format - Example:
+                <li>Date formats - Example:
                     <ol>
                         <li>MM DDD Y</li>
                         <li>MMM DD YY</li>
@@ -88,6 +77,9 @@
         <a href="https://github.com/KayT98"><img src="./images/github.png" alt="github"></a>
         <p id="copy">Copyright&copy; by Kay Truong <span id="copyRightYear"></span>. All rights reserved.</p>
     </footer>
-    <script src="main.js"></script>
+    <script src="monster.js"></script>
 </body>
 </html>
+
+
+
