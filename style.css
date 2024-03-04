@@ -26,12 +26,13 @@ input[type=number] {
 }
 .navBar a {
     color: white;
-    font-size: 2em;
-    position: absolute;
+    font-size: 1.3em;
     right: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px
+    padding: 10px;
+    margin-left: 20px
+}
+a:hover {
+    color: red;
 }
 ul {
     list-style: finger;
@@ -73,7 +74,7 @@ button {
     margin: 30px auto;
     width: 70%;
     padding: 10px;
-    background-color: #C1CDCD;
+    background-color: #D9CECC;
 }
 .explanation {
     border: 2px solid black;
@@ -84,7 +85,7 @@ button {
     margin: auto;
     width: 70%;
     padding: 10px;
-    background-color: #C1CDCD;
+    background-color: #D9CECC;
 }
 .shelfLife {
     border: 2px solid black;
@@ -95,7 +96,7 @@ button {
     margin: 30px auto;
     width: 70%;
     padding: 10px;
-    background-color: #C1CDCD;
+    background-color: #D9CECC;
 }
 .navBar {
     display: flex;
